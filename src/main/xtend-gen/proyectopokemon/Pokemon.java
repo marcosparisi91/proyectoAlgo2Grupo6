@@ -18,20 +18,21 @@ public class Pokemon {
     this.especie = _especie;
   }
   
-  public double getNivel() {
+  public int getNivel() {
     double _sqrt = Math.sqrt(((100 * ((2 * this.experiencia) + 25)) + 50));
-    return (_sqrt / 100);
+    double _divide = (_sqrt / 100);
+    return Double.valueOf(_divide).intValue();
   }
   
-  public double puntosAtaque() {
+  public int puntosAtaque() {
     int _ataqueBase = this.especie.getAtaqueBase();
-    double _nivel = this.getNivel();
+    int _nivel = this.getNivel();
     return (_ataqueBase * _nivel);
   }
   
-  public double puntosSalud() {
+  public int puntosSalud() {
     int _saludBase = this.especie.getSaludBase();
-    double _nivel = this.getNivel();
+    int _nivel = this.getNivel();
     return (_saludBase * _nivel);
   }
   

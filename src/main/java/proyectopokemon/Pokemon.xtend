@@ -19,7 +19,7 @@ class Pokemon {
 	}
 	
 	def getNivel(){
-		Math.sqrt(100*(2*this.experiencia+25)+50)/100
+		(Math.sqrt(100*(2*this.experiencia+25)+50)/100).intValue
 	}
 	def puntosAtaque(){
 		this.especie.ataqueBase * this.getNivel

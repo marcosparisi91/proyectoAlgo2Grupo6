@@ -1,5 +1,6 @@
 package proyectopokemon;
 
+import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.junit.Assert;
 import org.junit.Before;
 import org.junit.Test;
@@ -23,36 +24,38 @@ public class TestPokemon {
   }
   
   @Test
-  public void ConExperiencia2elNivelEs0coma54() {
+  public void ConExperiencia50elNivelEs1() {
     Especie _especie = new Especie(100, 200);
     this.pichachu = _especie;
     Pokemon _pokemon = new Pokemon(this.pichachu);
     this.poka = _pokemon;
-    this.poka.setExperiencia(2);
-    double _nivel = this.poka.getNivel();
-    Assert.assertEquals(_nivel, 0.54, 0.01);
+    this.poka.setExperiencia(50);
+    int _nivel = this.poka.getNivel();
+    InputOutput.<Integer>println(Integer.valueOf(_nivel));
+    int _nivel_1 = this.poka.getNivel();
+    Assert.assertEquals(_nivel_1, 1, 0.01);
   }
   
   @Test
-  public void PuntosDeAtaqueConExperiencia2Es54() {
+  public void PuntosDeAtaqueConExperiencia50Es100() {
     Especie _especie = new Especie(100, 200);
     this.pichachu = _especie;
     Pokemon _pokemon = new Pokemon(this.pichachu);
     this.poka = _pokemon;
-    this.poka.setExperiencia(2);
-    double _puntosAtaque = this.poka.puntosAtaque();
-    Assert.assertEquals(_puntosAtaque, 54, 1);
+    this.poka.setExperiencia(50);
+    int _puntosAtaque = this.poka.puntosAtaque();
+    Assert.assertEquals(_puntosAtaque, 100, 1);
   }
   
   @Test
-  public void PuntosDeSaludConExperiencia2Es108() {
+  public void PuntosDeSaludConExperiencia50Es200() {
     Especie _especie = new Especie(100, 200);
     this.pichachu = _especie;
     Pokemon _pokemon = new Pokemon(this.pichachu);
     this.poka = _pokemon;
-    this.poka.setExperiencia(2);
-    double _puntosSalud = this.poka.puntosSalud();
-    Assert.assertEquals(_puntosSalud, 108, 1);
+    this.poka.setExperiencia(50);
+    int _puntosSalud = this.poka.puntosSalud();
+    Assert.assertEquals(_puntosSalud, 200, 1);
   }
   
   @Test

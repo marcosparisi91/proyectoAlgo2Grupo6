@@ -19,37 +19,38 @@ class TestPokemon {
 	}
 
 	@Test
-	def ConExperiencia2elNivelEs0coma54() {
+	def ConExperiencia50elNivelEs1() {
 		pichachu = new Especie(100, 200)
 		poka = new Pokemon(pichachu)
-		poka.experiencia = 2
-		Assert.assertEquals(poka.getNivel, 0.54, 0.01)
+		poka.experiencia = 50
+		println(poka.getNivel)
+		Assert.assertEquals(poka.getNivel, 1, 0.01)
 	}
 
 	@Test
-	def PuntosDeAtaqueConExperiencia2Es54() {
+	def PuntosDeAtaqueConExperiencia50Es100() {
 		pichachu = new Especie(100, 200)
 		poka = new Pokemon(pichachu)
-		poka.experiencia = 2
-		Assert.assertEquals(poka.puntosAtaque(), 54, 1)
+		poka.experiencia = 50
+		Assert.assertEquals(poka.puntosAtaque(), 100, 1)
 	}
 
 	@Test
-	def PuntosDeSaludConExperiencia2Es108() {
+	def PuntosDeSaludConExperiencia50Es200() {
 		pichachu = new Especie(100, 200)
 		poka = new Pokemon(pichachu)
-		poka.experiencia = 2
-		Assert.assertEquals(poka.puntosSalud(), 108, 1)
+		poka.experiencia = 50
+		Assert.assertEquals(poka.puntosSalud(), 200, 1)
 	}
-	
-		@Test
+
+	@Test
 	def SetearDondeEstaPokemonX2Y4SetearPuntoX1Y2AssertNotEquals() {
 		pichachu = new Especie(100, 200)
 		poka = new Pokemon(pichachu)
-		poka.setpunto(2,4)
-		var  Point punto
-		punto =  new Point(1,2)
+		poka.setpunto(2, 4)
+		var Point punto
+		punto = new Point(1, 2)
 		Assert.assertNotEquals(poka.distanciaHasta(punto), 108, 1)
 	}
-	
+
 }
